@@ -6,17 +6,11 @@
 * - Пользователь должен иметь статус администратора (isAdmin) или быть подтвержденным пользователем (isVerifiedUser)
 * - А также пользователь должен обладать специальным разрешением (hasSpecialPermission) или временным пропуском (hasTemporaryPass)
 */
-const isAdmin = false
-const ifieisVerdUser = true
-const hasSpecialPermission = true
-const hasTemporaryPass = false
+// Входные данные
+const isAdmin = false;
+const isVerifiedUser = true;
+const hasSpecialPermission = true;
+const hasTemporaryPass = false;
 
-let isAccess = false
-
-while (isAccess === false) {
-    if (isAdmin === true || ifieisVerdUser === true || hasSpecialPermission === true || hasTemporaryPass === true ) {
-        isAccess = true
-    } else {
-        isAccess = false
-    }
-}
+// Определение доступа
+const isAccess = (isAdmin || isVerifiedUser) && (hasSpecialPermission || hasTemporaryPass);
